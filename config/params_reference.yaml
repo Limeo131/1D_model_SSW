@@ -1,0 +1,42 @@
+# Reference parameter set for the 1-D SSW model
+# As reported in Table 1 of Liu & Nakamura (2026)
+#
+# These are the canonical values used for the submitted manuscript.
+
+# --- Optimized parameters (gray-box calibration) ---
+beta: 0.233           # Nonlinear mixing-strength parameter
+s_tau: 0.5            # Global scaling factor for mixing timescale
+d1_days: 5            # Mesospheric radiative relaxation timescale (days)
+u_star: 7.0           # Wind threshold for weak-vortex E-P flux enhancement (m/s)
+delta_u: 16.0         # Additional wind increment in weak-wind regime (m/s)
+
+# --- Structural parameters (sensitivity scan) ---
+alpha: 0.5            # Coupling coefficient (FAWA ↔ mean-flow tendency)
+C: 2.2e-3            # E-P flux propagation coefficient
+chi_A: 4.0            # Curvature exponent of lower-stratospheric FAWA damping
+a_exp: 0.30           # Amplitude of upper-level FAWA damping increase (day^-1)
+
+# --- Fixed model parameters ---
+H: 7000.0            # Density scale height (m)
+kappa: 30.0           # Numerical diffusion coefficient (m^2/s)
+dz: 200.0            # Vertical grid spacing (m)
+dt: 120.0            # Time step (s)
+kmax: 501             # Number of vertical levels
+z_bottom: 10000.0     # Lower boundary height (m)
+z_top: 110000.0       # Upper boundary height (m)
+
+# --- Simulation configuration ---
+years_era5: 42        # ERA5 calibration winters (1979-2021)
+years_production: 1000 # Long stochastic integrations
+n_ensemble: 10        # Ensemble members for forcing sweep
+season: "Oct-May"     # Integration season
+
+# --- Forcing sweep scales ---
+forcing_scales: [0.5, 0.8, 1.0, 1.2, 1.5, 2.0]
+
+# --- uRAD perturbation experiments ---
+urad_gamma_upper: 0.5
+urad_experiments:
+  top:        {gamma_plus: 0.5, gamma_minus: 0.0}
+  top_bottom: {gamma_plus: 0.5, gamma_minus: 0.2}
+  top_minus:  {gamma_plus: 0.5, gamma_minus: -0.2}

@@ -1,0 +1,47 @@
+# Fortran build
+*.o
+*.mod
+*.smod
+d.out
+build/
+
+# Data and model output (too large for Git)
+*.nc
+*.nc4
+!data/sample/*.nc
+output/
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Figures (regenerable)
+*.png
+*.pdf
+!manuscript/fig/*.png
+!manuscript/*.pdf
+
+# System / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Local config
+.env
+.env.*
+config/local.*
+
+# Logs
+*.log
+*.txt
+!docs/*.txt
+# Kiro workspace config
+.kiro/
+manuscript/
+docs/
+REPOSITORY_INVENTORY.md
+SOURCE_LINEAGE.md

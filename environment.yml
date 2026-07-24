@@ -1,0 +1,16 @@
+name: 1d-ssw-model
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.9
+  - numpy
+  - scipy
+  - xarray
+  - netcdf4
+  - matplotlib
+  - seaborn
+  - pandas
+  - scikit-learn
+  - jupyter
+  - pip
